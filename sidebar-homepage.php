@@ -6,29 +6,6 @@
  * @since CALS 1.0
  */
 ?>
-<div class="homeSidebar">
-
-<div class="newsItem homewidget">
-	<div class="previousa">
-		<div class="titleheading">
-			<h3>Publications</h3>
-		</div>
-		<ul>
-		<li>
-			<a href="#">Publication 1</a>
-		</li>
-		
-		<li>
-			<a href="#">Publication 2</a>
-		</li>
-		
-		<li>
-			<a href="#">Publication 3</a>
-		</li>
-		</ul>
-		
-	</div>
-</div>
 
 <?php
 	/* The footer widget area is triggered if any of the areas
@@ -44,9 +21,7 @@
 ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-		
+	
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
-		
 	<?php endif; ?>
 
-</div>

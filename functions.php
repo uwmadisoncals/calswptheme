@@ -37,8 +37,7 @@
  * @since CALS 1.0
  */
 
-
-
+add_filter( 'pre_site_transient_update_core', create_function( '$a', "return null;" ) );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -95,11 +94,6 @@ function twentyeleven_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentyeleven' ) );
-	register_nav_menu( 'utility_links', __( 'Utility Links', 'twentyeleven' ) );
-	register_nav_menu( 'footer1', __( 'Footer Menu 1', 'twentyeleven' ) );
-	register_nav_menu( 'footer2', __( 'Footer Menu 2', 'twentyeleven' ) );
-	register_nav_menu( 'footer3', __( 'Footer Menu 3', 'twentyeleven' ) );
-	register_nav_menu( 'footer4', __( 'Footer Menu 4', 'twentyeleven' ) );
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
@@ -150,8 +144,6 @@ function twentyeleven_setup() {
 		add_custom_image_header( $custom_header_support['wp-head-callback'], $custom_header_support['admin-head-callback'], $custom_header_support['admin-preview-callback'] );
 		add_custom_background();
 	}
-	
-	
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
 	// We want them to be the size of the header image that we just defined
@@ -175,34 +167,6 @@ function twentyeleven_setup() {
 	) );
 }
 endif; // twentyeleven_setup
-
-
-function twentyelven_customize_register( $wp_customize ) {
-  $wp_customize->add_section( 'twentyelven_news_type', array(
-      'title'          => 'Home Page Options',
-      'priority'       => 35,
-  ) );
-  
-  $wp_customize->add_setting( 'news_type', array(
-      'default'        => 'full',
-      'type'           => 'theme_mod',
-      'capability'     => 'edit_theme_options',
-  ) );
-
-  $wp_customize->add_control( 'twentyelven_news_type', array(
-      'label'      => 'News Type',
-      'section'    => 'twentyelven_news_type',
-      'settings'   => 'news_type',
-      'type'       => 'radio',
-      'choices'    => array(
-        'full' => 'Full Post',
-        'excerpt' => 'Excerpt',
-      ),
-  ) );  
-    
-}
-add_action( 'customize_register', 'twentyelven_customize_register' );
-
 
 if ( ! function_exists( 'twentyeleven_header_style' ) ) :
 /**

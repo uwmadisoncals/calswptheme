@@ -2,36 +2,9 @@ $(function(){
 
 var countFeatures = 0;
 	   
-	   function getInternetExplorerVersion()
-{
-  var rv = -1;
-  if (navigator.appName == 'Microsoft Internet Explorer')
-  {
-    var ua = navigator.userAgent;
-    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-    if (re.exec(ua) != null)
-      rv = parseFloat( RegExp.$1 );
-  }
-  else if (navigator.appName == 'Netscape')
-  {
-    var ua = navigator.userAgent;
-    var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
-    if (re.exec(ua) != null)
-      rv = parseFloat( RegExp.$1 );
-  }
-  
-  if(rv == 10 || rv == 11) {
-	  return true;
-  }
-  
-}
-
-
-	   
 	   //Check to see if the homepage feature exists
 	   var checkcol = $('.collegeFeature').html();
 	   if(checkcol) {
-	   
 	   
 	   
 	   
@@ -109,8 +82,8 @@ var countFeatures = 0;
         	
         	clearTimeout(time2);
         	
-        if(BrowserDetect.browser == "Explorer" || BrowserDetect.browser == "Firefox" || getInternetExplorerVersion() == true) {
-	     	
+        if(BrowserDetect.browser == "Explorer" || BrowserDetect.browser == "Firefox") {
+	     
 	     } else {
         	
         	$('.collegeFeature .timer1').stop().rotate('0deg');
@@ -412,7 +385,7 @@ var countFeatures = 0;
 		
 		$(this).not('.customize, .noImage').find('.previousa').css("height",updateheight);
 		
-		if(BrowserDetect.browser != "Explorer" || getInternetExplorerVersion() == false) {
+		if(BrowserDetect.browser != "Explorer") {
 		
 		var b = $(this).find('.excerpt').html();
 		var h = $(this).find('.excerpt').height();
@@ -899,12 +872,12 @@ var countFeatures = 0;
 				
 				$('.newsItem .previousa a').mouseover(function() {
 					
-					//alert('test');
-					if(BrowserDetect.browser == "Explorer" || BrowserDetect.browser == "Opera" || getInternetExplorerVersion() == true) {
+					
+					if(BrowserDetect.browser == "Explorer" || BrowserDetect.browser == "Opera") {
 						var n = $(this).parent();
 						//ex = setTimeout(function() {
 						$(n).find('.excerpt').slideDown();
-						//alert('test');
+						
 						//},800)
 						 
 					} else {
@@ -928,7 +901,7 @@ var countFeatures = 0;
 				
 				
 				
-					if(BrowserDetect.browser == "Explorer" || BrowserDetect.browser == "Opera" || getInternetExplorerVersion() == true) {
+					if(BrowserDetect.browser == "Explorer" || BrowserDetect.browser == "Opera") {
 					//clearTimeout(ex);
 						$(this).parent().find('.excerpt').slideUp();
 					} else {
@@ -953,7 +926,7 @@ var countFeatures = 0;
 				
 				
 					
-					if(BrowserDetect.browser == "Explorer" || getInternetExplorerVersion() == true) {
+					if(BrowserDetect.browser == "Explorer") {
 						
 						$(this).parent().find('.excerpt').slideDown();
 						 
@@ -973,7 +946,7 @@ var countFeatures = 0;
 					
 				$('.newsItem .previousa a').blur(function() {
 					
-					if(BrowserDetect.browser == "Explorer" || getInternetExplorerVersion() == true) {
+					if(BrowserDetect.browser == "Explorer") {
 					
 						$(this).parent().find('.excerpt').slideUp();
 					} else {
@@ -1063,7 +1036,7 @@ var countFeatures = 0;
     
     //Compensate for Internet Explorer offset measurement
     var offset = $('#access').offset().top;
-    if(BrowserDetect.browser == "Explorer" || getInternetExplorerVersion() == true) {
+    if(BrowserDetect.browser == "Explorer") {
 	    offset = offset;
     } else {
 	    offset = offset + 80;
@@ -1096,7 +1069,7 @@ var countFeatures = 0;
 	    var w = $(this);
 
 		var tsrc = $(this).not('.customize').find('img').attr('src');
-		if(BrowserDetect.browser != "Explorer" || getInternetExplorerVersion() == false) {
+		if(BrowserDetect.browser != "Explorer") {
 		//$(this).find('.excerpt').hide();
 		}
 		var addarray = $(this).find('.titleheading').text();

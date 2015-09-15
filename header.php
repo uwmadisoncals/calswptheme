@@ -250,10 +250,6 @@ cals_search_feed('http://ecals.cals.wisc.edu/feed/', 40, 1, -1);
 			
 			
 <div class="headingbg clearfix"></div>
-	<?php if ( has_nav_menu( 'utility_links' ) ) { ?>
-	<div class="utilityLinks"><?php wp_nav_menu( array( 'theme_location' => 'utility_links' ) ); ?></div>
-	
-	<?php } ?>
 	</header><!-- #branding -->
 
 <div id="mobile-menu">

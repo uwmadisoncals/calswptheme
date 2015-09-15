@@ -120,12 +120,7 @@ if ( 'content' != $current_layout ) : ?>
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php if (get_theme_mod('news_type') == "full"){ ?>
-							<?php get_template_part( 'content', get_post_format() ); ?>
-						<?php } else { ?>
-
-							<?php get_template_part( 'content', 'excerpt' ); ?>
-						<?php }  ?>
+					<?php get_template_part( 'content', get_post_format() ); ?>
 
 				<?php endwhile; ?>
 
